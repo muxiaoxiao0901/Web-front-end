@@ -47,4 +47,20 @@ parseFloat('2.0000') //2
 * null 和 undefined 是相等的
 * 比较相等性之前不能将null和undefined转换成其他任何值
 * 如果有一个操作符是NaN，则相等符号返回false,即使两个操作符否是NaN也返回false
-* 如果两个操作数都是对象，则比较他们是不是同一个对象。如果两个操作符都指向同一个对象，返回true,否则 false
+* 如果两个操作数都是对象，则比较他们是不是同一个对象。如果两个操作符都指向同一个对象，返回true,否则 false    
+
+##### 数组相关函数    
+* `sort()`  先对数组中的每一项进行toString()操作再进行升序排序   
+sort 可传排序规则作为参数    
+```javascript
+function compare(a, b) {
+  return a-b;
+}
+```
+实现升序函数     
+* concat() 给予当前数组创建一个新的数组，将接收到的参数添加到这个数组的尾部。没有参数将返回当前数组的一个副本。
+* slice(start, end) 根据当前数组的一项或多项创建一个新的数组，end可以不传（由start - 数组尾），有end时，start - (end-1)     
+如果参数中包含负数，则转换为，start + length -- end + length   
+* splice(index, howmany, item1, ..., itemx) 方法向/从数组中添加/删除项目，然后返回被删除的项目。 会修改当前数组
+* indexOf 从数组的第一项开始匹配查找（与数组中每一项进行比较时采用全等操作符 ===）
+* lastIndexOf 从数组的最后一项开始匹配查找（与数组中每一项进行比较时采用全等操作符 ===）
